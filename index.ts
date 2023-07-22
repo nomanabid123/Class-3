@@ -36,9 +36,26 @@ const getInput = (message:string) => {
 }
 
 
-let balance:number = getInput("Enter your balance: ");
-let minimumBalance:number = getInput("Enter your minimum balance: ");
-let maxBalance:number = getInput("Enter your maximum balance: ");
+// let balance:number = getInput("Enter your balance: ");
+// let minimumBalance:number = getInput("Enter your minimum balance: ");
+// let maxBalance:number = getInput("Enter your maximum balance: ");
 
-console.log(`Your credit is ${calculateCredit(balance, minimumBalance, maxBalance)}`);
+// console.log(`Your credit is ${calculateCredit(balance, minimumBalance, maxBalance)}`);
 
+
+
+const findIndexs = (arr:number[]) => {
+     
+    let indexs:number[] = [];
+    let newArray = []
+    for(let i=arr[0]; i<arr[arr.length-1]; i++){
+       newArray.push(i);
+    }
+    for(let i=0; i<newArray.length; i++){
+        if(!arr.includes(newArray[i]))
+            indexs.push(i);
+    }
+    return indexs;
+}
+
+console.log(findIndexs([45,56,78,90]));

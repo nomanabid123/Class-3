@@ -1,5 +1,6 @@
 "use strict";
 const input = require('prompt-sync')({ sigint: true });
+/* Code Writen By Noman Abid (Software Engineer)*/
 const calculateCredit = (balance, minimumBalance, maxBalance) => {
     let total = balance + minimumBalance + maxBalance;
     let credit = '';
@@ -27,21 +28,20 @@ const getInput = (message) => {
     }
     return balance;
 };
-let balance = getInput("Enter your balance: ");
-let minimumBalance = getInput("Enter your minimum balance: ");
-let maxBalance = getInput("Enter your maximum balance: ");
-console.log(`Your credit is ${calculateCredit(balance, minimumBalance, maxBalance)}`);
-//find all missing values  index in array
-const findMissingValues = (arr) => {
-    let missingValues = [];
-    let index = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] != index) {
-            missingValues.push(index);
-            index++;
-        }
-        index++;
+// let balance:number = getInput("Enter your balance: ");
+// let minimumBalance:number = getInput("Enter your minimum balance: ");
+// let maxBalance:number = getInput("Enter your maximum balance: ");
+// console.log(`Your credit is ${calculateCredit(balance, minimumBalance, maxBalance)}`);
+const findIndexs = (arr) => {
+    let indexs = [];
+    let newArray = [];
+    for (let i = arr[0]; i < arr[arr.length - 1]; i++) {
+        newArray.push(i);
     }
-    return missingValues;
+    for (let i = 0; i < newArray.length; i++) {
+        if (!arr.includes(newArray[i]))
+            indexs.push(i);
+    }
+    return indexs;
 };
-console.log(findMissingValues([50, 60]));
+console.log(findIndexs([45, 56, 78, 90]));
